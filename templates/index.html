@@ -9,6 +9,7 @@
     <script src= "{{ url_for('static', filename='js/image-puzzle.js') }}"></script>
 </head>
 <body>
+    <!-- {{filename}} -->
     <div id="collage">
         <h2 style="color:#222; font-weight:bold; font-size:30px;">TECH-IT</h2>
         <hr />
@@ -47,15 +48,12 @@
 	<div style=" background: #000; color:#eee; padding:10px; text-align:center;"><h1><time>00:00:00</time></h1>©AjayRandhawa(2017)</div>
 	</div>
 	</div>
-	
+
 	        <script>
+            var img_src = "{{ url_for('static', filename='images/') }}" + "{{filename}}"
             var images = [
-                { src: "{{ url_for('static', filename='images/london-bridge.jpg') }}" },
-                { src:  "{{ url_for('static', filename='images/lotus-temple.jpg') }}"},
-                { src:  "{{ url_for('static', filename='images/qutub-minar.jpg') }}"},
-                { src:  "{{ url_for('static', filename='images/statue-of-liberty.jpg') }}"},
-                { src:  "{{ url_for('static', filename='images/taj-mahal.jpg') }}"},
-                { src:  "{{ url_for('static', filename='images/a.png') }}"}
+                { src:  img_src },
+                                
             ];
 
             $(function () {
